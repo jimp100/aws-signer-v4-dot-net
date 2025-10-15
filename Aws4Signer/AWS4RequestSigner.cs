@@ -127,7 +127,7 @@ namespace Aws4RequestSigner
             {
                 canonicalRequest.Append(header.Key.ToLowerInvariant());
                 canonicalRequest.Append(":");
-                canonicalRequest.Append(string.Join(",", header.Value.Select(s => s.Trim())));
+                canonicalRequest.Append(string.Join(", ", header.Value.Select(s => s.Trim())));
                 canonicalRequest.Append("\n");
                 signedHeadersList.Add(header.Key.ToLowerInvariant());
             }
